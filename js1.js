@@ -32,10 +32,10 @@ console.log( cb(3,3,add) );// What will it print = Result from the two numbers: 
 // const = variable, (callback)This technique allows a function to call another function
 
 console.log( cb(4,3,sub) ); // What will it print = Result from the two numbers: 4+3=1
-//
+// -||- // A callback is a function passed as an argument to another function.
 
 console.log(cb(3,3,add())); // What will it print (and what was the problem)
-//
+//When you pass a function as an argument, remember not to use parenthesis.
 
 console.log(cb(3,"hh",add));// What will it print = Result from the two numbers: 3+hh=3hh
 //
