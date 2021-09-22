@@ -1,0 +1,11 @@
+forskellen på Asynchronous & synchronous callbacks:
+
+Asynchronous code allows the program to be executed immediately where the,
+synchronous code will block further execution of the remaining code until it finishes the current one.
+
+if a callback does all it's work before returning to the caller,
+it's "synchronous". If it can return to the caller immediately after it's invoked -
+and the caller and the callback can work in parallel - then it's "asynchronous"
+
+synkrone kald blokerer tråden, den kan ikke arbejde før den får svar tilbage.
+asynkrone svarer inden serveren svarer. fortsætter.

@@ -8,15 +8,24 @@ const sub = function(n1,n2){
     return n1 - n2
 }
 
+const mul = function(n1,n2) {
+    return n1 / n2
+}
+
 
 const cb = function(n1,n2, callback){
-    // try {
-    //     doFailSometimes();
-    // } catch (error) {
-    //     throw new Error("Failed somehow", {cause: error});
-    // }
+    try {
+        if ((typeof n1 === "number") && (typeof callback === "function")) {
+            console.log("true")
+        }
+
+    } catch (e) {
+        console.log(e);
+        errLogs.push(e);
+    }
     return "Result from the two numbers: "+n1+"+"+n2+"="+callback(n1,n2);
 };
+
 
 
 console.log( add(1,2) )// What will this print? = 3 fordi vores return +'er vores numbers
@@ -34,9 +43,10 @@ console.log( cb(3,3,add) );// What will it print = Result from the two numbers: 
 console.log( cb(4,3,sub) ); // What will it print = Result from the two numbers: 4+3=1
 // -||- // A callback is a function passed as an argument to another function.
 
-console.log(cb(3,3,add())); // What will it print (and what was the problem)
+console.log(cb(3,3,add)); // What will it print (and what was the problem)
 //When you pass a function as an argument, remember not to use parenthesis.
 
 console.log(cb(3,"hh",add));// What will it print = Result from the two numbers: 3+hh=3hh
-//
+// changes it from number to string.
+console.log(cb(5,4,mul));
 
